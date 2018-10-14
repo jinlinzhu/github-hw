@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stack Index</title>
+</head>
+<body>
+    <div id="menu"> 
+        <ol>
+            <li>
+                <a href="@Url.Action("AddOne", "Stack")" class="w3-bar-item w3-button">Add One Item to Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AddMany", "Stack")" class="w3-bar-item w3-button">Add Huge List of Items to Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Display", "Stack")" class="w3-bar-item w3-button">Display Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("DeleteFrom", "Stack")" class="w3-bar-item w3-button">Delete From Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Clear", "Stack")" class="w3-bar-item w3-button">Clear Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Search", "Stack")" class="w3-bar-item w3-button">Search Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Exit", "Stack")" class="w3-bar-item w3-button">Exit</a>
+            </li>
+        </ol>
+    </div>
+    <div id="display-area">
+        @foreach (var sData in ViewBag.StackView)
+        {
+            <p>@sData</p>
+        }
+
+        <p>@ViewBag.Result</p>
+        <p>@ViewBag.Stopwatch</p>
+
+    </div>
+</body>
+</html>
